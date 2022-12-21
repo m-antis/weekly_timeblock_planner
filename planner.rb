@@ -29,24 +29,13 @@ FONTS = {
 }
 
 FILE_NAME = "time_block_pages.pdf"
-PAGE_SIZE = 'LETTER' # Could also do 'A4'
+PAGE_SIZE = 'LETTER'
 # Order is top, right, bottom, left
 LEFT_PAGE_MARGINS = [36, 72, 36, 36]
 RIGHT_PAGE_MARGINS = [36, 36, 36, 72]
 
 # Names by day of week, 0 is Sunday.
 OOOS_BY_WDAY = [nil, nil, ['Juan'], ['Kelly'], nil, ['Alex', 'Edna'], nil]
-
-# Repeating tasks by day of week, 0 is Sunday. Nested index is the row.
-TASKS_BY_WDAY = [
-  { 0 => 'Plan meals' },
-  { 0 => 'Update standup notes', 12 => 'Italian', 13 => 'Walk dog' },
-  { 0 => 'Update standup notes', 12 => 'Italian', 13 => 'Walk dog' },
-  { 0 => 'Update standup notes', 12 => 'Italian', 13 => 'Walk dog' },
-  { 0 => 'Update standup notes', 12 => 'Italian', 13 => 'Walk dog' },
-  { 0 => 'Update standup notes', 12 => 'Italian', 13 => 'Walk dog' },
-  { 0 => 'Plan next week' },
-]
 
 # From https://stackoverflow.com/a/24753003/203673
 #
@@ -293,7 +282,7 @@ def daily_tasks_page date
   checkbox_size = grid.row_height - (2 * checkbox_padding)
   (6..last_row).each_with_index do |row, index|
     grid(row, 0).bounding_box do
-      draw_checkbox checkbox_size, checkbox_padding, TASKS_BY_WDAY[date.wday][index]
+      draw_checkbox checkbox_size, checkbox_padding
     end
   end
 end
@@ -426,7 +415,7 @@ def weekend_page saturday, sunday
       checkbox_size = grid.row_height - (2 * checkbox_padding)
       ((task_start_row + 1)..task_last_row).each_with_index do |row, index|
         grid(row, 0).bounding_box do
-          draw_checkbox checkbox_size, checkbox_padding, TASKS_BY_WDAY[date.wday][index]
+          draw_checkbox checkbox_size, checkbox_padding
         end
       end
 
