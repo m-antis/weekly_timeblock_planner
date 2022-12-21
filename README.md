@@ -8,7 +8,7 @@ Forked from drewish take on [Cal Newport's Time-Block Planner](https://www.timeb
 Assuming you've got [Ruby](http://www.ruby-lang.org/en/) and [Bundler](https://bundler.io)
 installed you can just run:
 ```
-git clone git@github.com:drewish/planner.git
+git clone git@github.com:Hyunggilwoo/planner.git 
 cd planner
 bundle install
 ```
