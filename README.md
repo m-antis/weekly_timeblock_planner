@@ -1,6 +1,6 @@
 # Generate Time-Block Planner Pages
 
-Forked from drewish take on [Cal Newport's Time-Block Planner](https://www.timeblockplanner.com). This generates a PDF with a week's worth of pages to be editted on tablet.
+Forked from drewish take on [Cal Newport's Time-Block Planner](https://www.timeblockplanner.com). This generates a PDF with a week's worth of pages to be editted on tablet. You can take a look at a [sample](https://github.com/Hyunggilwoo/planner/blob/main/sample.pdf) and see what you think.
 
 
 ## Installation
