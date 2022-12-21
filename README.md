@@ -1,6 +1,6 @@
 # Generate Time-Block Planner Pages
 
-If you use Mac, here is the original rpository by drewish!
+If you use Mac, here is the original repository by drewish https://github.com/drewish/planner
 
 I'm a big fan of [Cal Newport's Time-Block Planner](https://www.timeblockplanner.com) but I didn't like 
 having unused weekend pages and got tired of writing in the dates so I wrote this script to generate
