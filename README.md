@@ -27,4 +27,4 @@ You can generate pages for a different weeks by passing in the date:
 
 ## Limitations
 
-It probably only works on Ubuntu, but not other linux distro because I hard coded the Ubuntu font path.
+It probably only works on Ubuntu, but not on other linux distro because I hard coded the Ubuntu font path.
