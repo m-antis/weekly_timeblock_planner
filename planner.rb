@@ -34,11 +34,11 @@ FONTS = {
 #  week = ...
 # name = name + "_" + quarter + "_" + week + ".pdf"
 # 
-def generate_file_name()
-  file_name = "time_block_pages"
-  file_name += 
-  file_name += ".pdf"
-  return file_name # time_block_pages
+# def generate_file_name()
+#   file_name = "time_block_pages"
+#   file_name += 
+#   file_name += ".pdf"
+#   return file_name # time_block_pages
 
 
 FILE_NAME = "time_block_pages.pdf"
@@ -467,7 +467,7 @@ def weekend_page saturday, sunday
   end
 end
 
-# TODO: refactoring the sunday method, to reformat file name
+# # TODO: refactoring the sunday method, to reformat file name
 def generate_sunday input_date
   sunday = if input_date.empty?
     date = DateTime.now.to_date
