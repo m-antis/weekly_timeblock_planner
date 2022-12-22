@@ -20,7 +20,7 @@ UBUNTU_MONO_RI = "/UbuntuMono-RI.ttf"
 UBUNTU_MONO_B = "/UbuntuMono-B.ttf"
 UBUNTU_C = "/Ubuntu-C.ttf"
 FONTS = {
-  'Futura' => {
+  'Ubuntu' => {
     normal: { file: UBUNTU_FONT_PATH + UBUNTU_MONO_R, font: 'Ubuntu-Mono-Regular' },
     italic: { file: UBUNTU_FONT_PATH + UBUNTU_MONO_RI, font: 'Ubuntu-Mono-Italics' },
     bold: { file: UBUNTU_FONT_PATH + UBUNTU_MONO_B, font: 'Ubuntu-Mono-Bold' },
