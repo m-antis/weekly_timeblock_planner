@@ -454,21 +454,26 @@ def weekend_page saturday, sunday
   end
 end
 
-def generate_sunday input_date
-  sunday = if input_date.empty?
-    date = DateTime.now.to_date
-    if date.wday > 2
-      puts "Generating pages for the next week"
-      date.next_day(7-date.wday)
+Prawn::Document.generate(FILE_NAME, margin: RIGHT_PAGE_MARGINS, print_scaling: :none) do
+  font_families.update(FONTS)
+  font(FONTS.keys.first)
+  stroke_color MEDIUM_COLOR
+  line_width(0.5)
+
+  sunday = if ARGV.empty?
+      date = DateTime.now.to_date
+      if date.wday > 2
+        puts "Generating pages for the next week"
+        date.next_day(7-date.wday)
+      else
+        puts "Generating pages for this week"
+        date.prev_day(date.wday)
+      end
     else
-      puts "Generating pages for this week"
+      date = DateTime.parse(ARGV.first).to_date
+      puts "Parsed #{date} from arguments"
       date.prev_day(date.wday)
     end
-  else
-    date = DateTime.parse(ARGV.first).to_date
-    puts "Parsed #{date} from arguments"
-    date.prev_day(date.wday)
-  end
 
   WEEKS.times do |week|
     unless week.zero?
