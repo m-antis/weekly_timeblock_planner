@@ -28,19 +28,6 @@ FONTS = {
   }
 }
 
-# TODO: file name should equal time_block_pages_quarter_week.pdf
-## generate_file_name(day) 
-#  quarter = ...
-#  week = ...
-# name = name + "_" + quarter + "_" + week + ".pdf"
-# 
-# def generate_file_name()
-#   file_name = "time_block_pages"
-#   file_name += 
-#   file_name += ".pdf"
-#   return file_name # time_block_pages
-
-
 FILE_NAME = "time_block_pages.pdf"
 PAGE_SIZE = 'LETTER'
 # Order is top, right, bottom, left
@@ -467,7 +454,6 @@ def weekend_page saturday, sunday
   end
 end
 
-# # TODO: refactoring the sunday method, to reformat file name
 def generate_sunday input_date
   sunday = if input_date.empty?
     date = DateTime.now.to_date
@@ -479,21 +465,10 @@ def generate_sunday input_date
       date.prev_day(date.wday)
     end
   else
-    date = DateTime.parse(input_date.first).to_date
+    date = DateTime.parse(ARGV.first).to_date
     puts "Parsed #{date} from arguments"
     date.prev_day(date.wday)
   end
-  return sunday
-
-# TODO: reformatting the file name, so that file name is incremented automatically
-# Prawn::Document.generate(generate_file_name(ARGV), margin: RIGHT_PAGE_MARGINS, print_scaling: :none) do
-Prawn::Document.generate(FILE_NAME, margin: RIGHT_PAGE_MARGINS, print_scaling: :none) do
-  font_families.update(FONTS)
-  font(FONTS.keys.first)
-  stroke_color MEDIUM_COLOR
-  line_width(0.5)
-
-  sunday = generate_sunday(ARGV)
 
   WEEKS.times do |week|
     unless week.zero?
