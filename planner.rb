@@ -1,7 +1,8 @@
-#!/usr/bin/env ruby
+#!/home/gantis/.asdf/shims/ruby
 
 require 'prawn'
 require 'prawn/measurement_extensions'
+#!/usr/bin/env ruby
 require 'pry'
 require 'date'
 
@@ -27,8 +28,19 @@ FONTS = {
     condensed: { file: UBUNTU_FONT_PATH + UBUNTU_C, font: 'Ubuntu Condensed' },
   }
 }
+  today = Date.today 
 
-FILE_NAME = "time_block_pages.pdf"
+  case today
+    when 0 then today = Date.today 
+    when 1 then today = Date.today - 1
+    when 2 then today = Date.today - 2
+    when 3 then today = Date.today - 3
+    when 4 then today = Date.today - 4
+    when 5 then today = Date.today - 5
+    when 6 then today = Date.today - 6
+  end
+
+FILE_NAME = "/home/gantis/obsidian_mobile/pdfs/timeblockpages/#{today.strftime('%Y%m%d')}_#{today.cweek}.pdf"
 PAGE_SIZE = 'LETTER'
 # Order is top, right, bottom, left
 LEFT_PAGE_MARGINS = [36, 72, 36, 36]
